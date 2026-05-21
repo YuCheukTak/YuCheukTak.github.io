@@ -1,161 +1,85 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>茹卓德的個人簡介與作品集</title>
+    <title>Yu Cheuk Tak | Engineering Portfolio</title>
     <style>
-        /* 現代化網頁優化外觀 */
-        body { 
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            max-width: 850px; 
-            margin: 0 auto; 
-            padding: 40px 20px; 
-            background-color: #f8fafc; 
-            color: #1e293b; 
-            line-height: 1.7;
-        }
-        header { 
-            padding: 40px 0; 
-            border-bottom: 2px solid #e2e8f0; 
-            margin-bottom: 40px;
-        }
-        h1 { 
-            color: #0284c7; 
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #334155;
-            font-size: 1.8rem;
-            margin-top: 20px;
-        }
-        .intro-text {
-            font-size: 1.15rem;
-            color: #475569;
-        }
-        .project-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            margin-top: 20px;
-        }
-        @media (min-width: 768px) {
-            .project-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        .project-card { 
-            background: white; 
-            padding: 25px; 
-            border-radius: 16px; 
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
-            border: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-        }
-        .project-card h3 {
-            color: #0f172a;
-            margin-top: 0;
-            font-size: 1.4rem;
-        }
-        .project-card p {
-            color: #475569;
-            font-size: 1rem;
-            flex-grow: 1;
-        }
-        .tag-container {
-            margin: 15px 0;
-        }
-        .tag {
-            background-color: #f0fdf4;
-            color: #166534;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            margin-right: 6px;
-            display: inline-block;
-            font-weight: 500;
-        }
-        /* 超級網頁按鈕樣式 */
-        .project-link {
-            display: inline-block;
-            text-align: center;
-            background-color: #0284c7;
-            color: white;
-            text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: background-color 0.2s;
-            margin-top: 15px;
-            box-shadow: 0 2px 4px rgba(2, 132, 199, 0.2);
-        }
-        .project-link:hover {
-            background-color: #0369a1;
-        }
-        footer { 
-            margin-top: 60px; 
-            padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
-            color: #64748b; 
-            font-size: 0.95rem; 
-        }
+        :root { --bg-color: #0b0f19; --card-bg: #151c2c; --text-color: #e2e8f0; --accent-color: #38bdf8; --border-color: #1e293b; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; padding: 40px 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        h1, h2, h3 { color: #ffffff; margin-top: 30px; }
+        .card { background-color: var(--card-bg); border-radius: 12px; padding: 35px; margin-bottom: 30px; border: 1px solid var(--border-color); }
+        .section-title { font-size: 2rem; margin: 50px 0 25px; border-left: 6px solid var(--accent-color); padding-left: 20px; }
+        .btn { display: inline-block; background-color: var(--accent-color); color: var(--bg-color); padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 20px; transition: 0.3s; }
+        .btn:hover { background-color: #7dd3fc; }
+        ul { margin-left: 25px; }
+        li { margin-bottom: 12px; }
     </style>
 </head>
 <body>
+    <div class="container">
+        <header style="text-align: center; margin-bottom: 60px;">
+            <h1>Yu Cheuk Tak (茹卓德)</h1>
+            <p style="font-size: 1.2rem; color: var(--accent-color);">Aspiring Engineering Student | Instituto Salesiano, Macau</p>
+        </header>
 
-    <header>
-        <h1>你好，我是茹卓德 👋</h1>
-        <p class="intro-text">歡迎來到我的個人網站！我是一名對科技創新、智能硬件與工程研發充滿熱情的學生。以下是我近期完成的重點創新專案報告。</p>
-    </header>
-
-    <main>
-        <h2>精選創新專案展示</h2>
-        
-        <div class="project-grid">
-            <div class="project-card">
-                <div>
-                    <h3>🚀 智能創新專案（一）</h3>
-                    <div class="tag-container">
-                        <span class="tag">研究報告</span>
-                        <span class="tag">科技創新</span>
-                        <span class="tag">Google Docs</span>
-                    </div>
-                    <p>這是我近期完成的第一個核心科研與創新項目。文檔中詳細記錄了專案的設計理念、技術架構、核心攻關過程以及最終的測試數據分析。</p>
-                </div>
-                <a href="https://docs.google.com/document/d/1SGBnBcDPj6r3aB87sa0ZjICGMh_L1TjX7Va7d0parr4/edit?usp=sharing" target="_blank" class="project-link">
-                    查看專案完整文檔 ↗
-                </a>
+        <section>
+            <h2 class="section-title">Biography</h2>
+            <div class="card">
+                <p>I am an engineering track student from <strong>Instituto Salesiano</strong> in Macau. Cultivated by our school's "Design & Applied Technology (DAT)" curriculum, I have built a foundational engineering mindset that integrates hands-on prototyping with systematic technical documentation. I view engineering as a tool to bridge the gap between complex theory and real-world societal needs. My goal is to pursue Engineering at <strong>National Taiwan Ocean University</strong>, leveraging advanced technical training to contribute to the smart automation and urban resilience of our coastal communities. I am dedicated to translating academic research into viable engineering frameworks that address regional infrastructure challenges.</p>
             </div>
+        </section>
 
-            <div class="project-card">
-                <div>
-                    <h3>🤖 智能創新專案（二）</h3>
-                    <div class="tag-container">
-                        <span class="tag">工程設計</span>
-                        <span class="tag">系統整合</span>
-                        <span class="tag">技術成果</span>
-                    </div>
-                    <p>這是我主導研發的第二個重要工程與設計專案。文檔內包含了完整的系統邏輯圖、硬件選型與軟件代碼說明，全面展示了如何解決實際的工程技術難題。</p>
-                </div>
-                <a href="https://docs.google.com/document/d/1dbXzAUAhFdLnkWyG61E8zaX536WsDdPcqH2cRu7VRyE/edit?usp=sharing" target="_blank" class="project-link">
-                    查看專案完整文檔 ↗
-                </a>
+        <section>
+            <h2 class="section-title">Technical Toolkit</h2>
+            <div class="card">
+                <ul>
+                    <li><strong>Mechanical & Prototyping:</strong> Expert in Autodesk Fusion 360 parameterization and Design for Manufacturing (DFM). Highly proficient in Bambu Lab 3D printing rapid prototyping with structural stress analysis.</li>
+                    <li><strong>Embedded IoT Systems:</strong> Expert in ESP32-C3 (RISC-V) and Arduino frameworks. Deeply experienced in I2C/SPI/UART communication protocols, multi-sensor fusion (GY-511 LSM303DLHC Accelerometer/Magnetometer), and signal filtering algorithms to eliminate inertial noise.</li>
+                    <li><strong>Aerospace & Spatial Systems:</strong> Advanced understanding of Beidou Satellite Navigation System (BDS) architecture, including absolute temporal-spatial calibration and low-latency short-message communication protocols for emergency rescue operations in off-grid environments.</li>
+                    <li><strong>Advanced Academics:</strong> Advanced Calculus (applied in system dynamics), Advanced Chemistry (electrochemical energy storage dynamics), and expert-level technical reporting/proposal authoring.</li>
+                </ul>
             </div>
-        </div>
-    </main>
+        </section>
 
-    <footer>
-        <p>✉️ 聯絡我或了解更多：your-email@example.com</p>
-    </footer>
+        <section>
+            <h2 class="section-title">Core Engineering Projects</h2>
+            <div class="card">
+                <h3>Autonomous Sumo Robot (4th Place School-wide)</h3>
+                <p>Designed a competitive sumo robot using a 7-sensor IR matrix for precise boundary and enemy detection. <strong>Technical Challenge:</strong> Faced a critical structural conflict between the L-shaped motor housing and the battery box; I resolved this through iterative manual polishing and chassis recalibration. During finals, when the front wing fractured under collision, I implemented an emergency structural support using reinforced adhesive laminates to maintain rigid competitive performance.</p>
+                <a href="請在此貼上 F4C_Group6_Sumo_report 的 Google Drive 連結" class="btn" target="_blank">View Technical Report</a>
+            </div>
+            <div class="card">
+                <h3>"Ling-Tong" Beidou Micro-Reconnaissance Sphere</h3>
+                <p>Authored a 20-page expert technical proposal for a high-rigidity reconnaissance sphere. <strong>System Architecture:</strong> Integrated an ESP32 dual-core processor for tactical low-latency video links. Developed a "Vision-Space Synchronous Anchoring" protocol. <strong>Key Contribution:</strong> Investigated Beidou short-message protocols to transmit critical telemetry (gas levels, life signs) mapped to absolute spatial-temporal coordinates, providing a solution to the "information black-box" effect in disaster zones.</p>
+                <a href="請在此貼上 靈瞳計畫書 的 Google Drive 連結" class="btn" target="_blank">View Project Proposal</a>
+            </div>
+            <div class="card">
+                <h3>Communication Museum Device Construction (Judges' Commendation)</h3>
+                <p><strong>2024 Projectile Launcher:</strong> Focused on classic mechanical kinematics. Optimized gear ratios and linkage-based energy accumulation mechanisms to achieve high-precision ballistic release using standardized low-voltage DC motors.</p>
+                <p><strong>2026 "Dynamic & Static" Sorting Bot:</strong> Implemented a proprietary S-Curve acceleration algorithm to eliminate inertial jitter on open-platform transportation. Integrated a multi-DOF servo robotic arm with coordinate compensation logic, successfully navigating non-railed platforms to secure a Judges' Commendation Award among elite teams.</p>
+                <a href="https://www.cmm.gov.mo/chis/activities/2024/ecompetition/result.html" class="btn" target="_blank">View Competition Details</a>
+            </div>
+            <div class="card">
+                <h3>IoT Smart Dumbbell Development (In-Progress)</h3>
+                <p><strong>Current Research:</strong> Developing a digital fitness analytics platform. Integrating an <strong>ESP32-C3 microcontroller</strong> via I2C bus with a <strong>GY-511 (LSM303DLHC) sensor module</strong> to map multi-axis real-time motion. <strong>Algorithm Development:</strong> Currently coding complementary filtering algorithms to isolate inertial noise from sensor data, enabling precise detection of training form and calorie estimation. Scheduled for full technical reporting in June 2026.</p>
+            </div>
+        </section>
 
+        <section>
+            <h2 class="section-title">Fieldwork & Social Practice</h2>
+            <div class="card">
+                <p><strong>Urban Renewal & Safety Advocacy (Seng I Building):</strong> Conducted a field survey of the <strong>"Seng I" building</strong> in Macau’s Northern District. Identified critical safety hazards including extensive concrete spalling, failed communal corridor lighting, and hazardous debris obstructing fire emergency escape routes. Authored a formal policy brief urging the SAR government to accelerate urban renewal and structural retrofitting programs.</p>
+                <p><strong>Industrial Expedition:</strong> Participated in the Macau Engineering Association’s Dongguan expedition. Witnessed Industry 4.0 automated production lines, bridging desktop prototyping mindsets with large-scale industrial Design for Manufacturing (DFM) requirements.</p>
+                <p><strong>Tea Ceremony (Chado) & Critical Thinking:</strong> I practice Chado to cultivate the absolute focus and process precision required for high-level hardware debugging. Combined with formal historical research training, I have developed the ability to synthesize complex literature, perform critical multi-dimensional causality analysis, and evaluate the long-term societal impacts of technological deployment.</p>
+            </div>
+        </section>
+
+        <footer style="text-align: center; margin-top: 50px;">
+            <p>If you are an academic reviewer, please feel free to reach out directly via Gmail.</p>
+            <a href="mailto:cheuktakyu@gmail.com" class="btn">Connect via Gmail</a>
+        </footer>
+    </div>
 </body>
 </html>
