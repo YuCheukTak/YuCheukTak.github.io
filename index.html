@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>茹卓德的個人簡介與作品集</title>
+    <style>
+        /* 現代化網頁優化外觀 */
+        body { 
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            max-width: 850px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            background-color: #f8fafc; 
+            color: #1e293b; 
+            line-height: 1.7;
+        }
+        header { 
+            padding: 40px 0; 
+            border-bottom: 2px solid #e2e8f0; 
+            margin-bottom: 40px;
+        }
+        h1 { 
+            color: #0284c7; 
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #334155;
+            font-size: 1.8rem;
+            margin-top: 20px;
+        }
+        .intro-text {
+            font-size: 1.15rem;
+            color: #475569;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        @media (min-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .project-card { 
+            background: white; 
+            padding: 25px; 
+            border-radius: 16px; 
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        .project-card h3 {
+            color: #0f172a;
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+        .project-card p {
+            color: #475569;
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+        .tag-container {
+            margin: 15px 0;
+        }
+        .tag {
+            background-color: #f0fdf4;
+            color: #166534;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            margin-right: 6px;
+            display: inline-block;
+            font-weight: 500;
+        }
+        /* 超級網頁按鈕樣式 */
+        .project-link {
+            display: inline-block;
+            text-align: center;
+            background-color: #0284c7;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s;
+            margin-top: 15px;
+            box-shadow: 0 2px 4px rgba(2, 132, 199, 0.2);
+        }
+        .project-link:hover {
+            background-color: #0369a1;
+        }
+        footer { 
+            margin-top: 60px; 
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b; 
+            font-size: 0.95rem; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>你好，我是茹卓德 👋</h1>
+        <p class="intro-text">歡迎來到我的個人網站！我是一名對科技創新、智能硬件與工程研發充滿熱情的學生。以下是我近期完成的重點創新專案報告。</p>
+    </header>
+
+    <main>
+        <h2>精選創新專案展示</h2>
+        
+        <div class="project-grid">
+            <div class="project-card">
+                <div>
+                    <h3>🚀 智能創新專案（一）</h3>
+                    <div class="tag-container">
+                        <span class="tag">研究報告</span>
+                        <span class="tag">科技創新</span>
+                        <span class="tag">Google Docs</span>
+                    </div>
+                    <p>這是我近期完成的第一個核心科研與創新項目。文檔中詳細記錄了專案的設計理念、技術架構、核心攻關過程以及最終的測試數據分析。</p>
+                </div>
+                <a href="https://docs.google.com/document/d/1SGBnBcDPj6r3aB87sa0ZjICGMh_L1TjX7Va7d0parr4/edit?usp=sharing" target="_blank" class="project-link">
+                    查看專案完整文檔 ↗
+                </a>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <h3>🤖 智能創新專案（二）</h3>
+                    <div class="tag-container">
+                        <span class="tag">工程設計</span>
+                        <span class="tag">系統整合</span>
+                        <span class="tag">技術成果</span>
+                    </div>
+                    <p>這是我主導研發的第二個重要工程與設計專案。文檔內包含了完整的系統邏輯圖、硬件選型與軟件代碼說明，全面展示了如何解決實際的工程技術難題。</p>
+                </div>
+                <a href="https://docs.google.com/document/d/1dbXzAUAhFdLnkWyG61E8zaX536WsDdPcqH2cRu7VRyE/edit?usp=sharing" target="_blank" class="project-link">
+                    查看專案完整文檔 ↗
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>✉️ 聯絡我或了解更多：your-email@example.com</p>
+    </footer>
+
+</body>
+</html>
