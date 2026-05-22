@@ -3,83 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yu Cheuk Tak | Engineering Portfolio</title>
+    <title>Yu Cheuk Tak - Engineering Portfolio</title>
     <style>
-        :root { --bg-color: #0b0f19; --card-bg: #151c2c; --text-color: #e2e8f0; --accent-color: #38bdf8; --border-color: #1e293b; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; padding: 40px 20px; }
-        .container { max-width: 1000px; margin: 0 auto; }
-        h1, h2, h3 { color: #ffffff; margin-top: 30px; }
-        .card { background-color: var(--card-bg); border-radius: 12px; padding: 35px; margin-bottom: 30px; border: 1px solid var(--border-color); }
-        .section-title { font-size: 2rem; margin: 50px 0 25px; border-left: 6px solid var(--accent-color); padding-left: 20px; }
-        .btn { display: inline-block; background-color: var(--accent-color); color: var(--bg-color); padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 20px; transition: 0.3s; }
-        .btn:hover { background-color: #7dd3fc; }
-        ul { margin-left: 25px; }
-        li { margin-bottom: 12px; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #222222;
+            line-height: 1.7;
+            padding: 50px 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px solid #111111;
+            padding-bottom: 20px;
+        }
+        header h1 {
+            font-size: 2.2rem;
+            color: #111111;
+            margin: 0 0 10px 0;
+        }
+        header p {
+            font-size: 1.1rem;
+            color: #555555;
+            margin: 0;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #0f172a;
+            border-bottom: 1px solid #cccccc;
+            padding-bottom: 8px;
+            margin-top: 45px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: #1e3a8a;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .project-block {
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul {
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #1e3a8a;
+            border: 1px solid #1e3a8a;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        .btn:hover {
+            background-color: #1e3a8a;
+            color: #ffffff;
+        }
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #cccccc;
+            color: #666666;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <header style="text-align: center; margin-bottom: 60px;">
+        <header>
             <h1>Yu Cheuk Tak (茹卓德)</h1>
-            <p style="font-size: 1.2rem; color: var(--accent-color);">Aspiring Engineering Student | Instituto Salesiano, Macau</p>
+            <p>Engineering Track Student | Instituto Salesiano, Macau</p>
         </header>
 
-        <section>
-            <h2 class="section-title">Biography</h2>
-            <div class="card">
-                <p>I am an engineering track student from <strong>Instituto Salesiano</strong> in Macau. Cultivated by our school's "Design & Applied Technology (DAT)" curriculum, I have built a foundational engineering mindset that integrates hands-on prototyping with systematic technical documentation. I view engineering as a tool to bridge the gap between complex theory and real-world societal needs. My goal is to pursue Engineering at <strong>National Taiwan Ocean University</strong>, leveraging advanced technical training to contribute to the smart automation and urban resilience of our coastal communities. I am dedicated to translating academic research into viable engineering frameworks that address regional infrastructure challenges.</p>
+        <section id="biography">
+            <h2>Biography</h2>
+            <p>I am a senior student specializing in the engineering track at Instituto Salesiano in Macau. Shaped by our school's specialized Design & Applied Technology (DAT) curriculum, I have concentrated on practical engineering prototyping and technical documentation since Senior 1. I focus on connecting theoretical science and calculus with hardware-software integration to solve actual functional challenges. My aspiration is to major in Engineering at National Taiwan Ocean University, where I hope to build upon my foundation in automation and sensor networks to address modern infrastructure and community problems.</p>
+        </section>
+
+        <section id="toolkit">
+            <h2>Technical Toolkit</h2>
+            <ul>
+                <li><strong>Mechanical Prototyping:</strong> Practical application of Autodesk Fusion 360 for parametric design and 3D printing rapid prototyping (Bambu Lab), with a focus on structural stability and material optimization.</li>
+                <li><strong>Embedded & IoT Hardware:</strong> Firmware development using Arduino frameworks on microcontrollers such as the ESP32-C3. Hands-on experience debugging I2C protocols and incorporating sensor data from systems like the GY-511 module.</li>
+                <li><strong>Spatial Data Integration:</strong> Understanding of the Beidou Satellite Navigation System framework, focused on using short-message communication protocols and telemetry tracking for off-grid environmental safety.</li>
+                <li><strong>Academics:</strong> Advanced coursework in Calculus (applied to kinematics) and Advanced Chemistry (focus on energy and electrochemical reactions).</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Core Engineering Projects</h2>
+
+            <div class="project-block">
+                <h3>Autonomous Sumo Robot Prototyping (F4C_Group6)</h3>
+                <p>Designed and built an autonomous sumo robot structured to clear a ring using a 7-sensor infrared (IR) array for line detection and target tracking. During development, a structural alignment issue occurred where the L-shaped motor casing conflicted physically with the battery compartment. I resolved this constraint by manually modifying the internal chassis layout. When a component failure occurred during the matches, I applied immediate structural reinforcements to maintain baseline stability, securing 4th place school-wide.</p>
+                <a href="F4C_Group6_Sumo_report.pdf" class="btn" download="Yu_Cheuk_Tak_Sumo_Robot_Report.pdf">Download Technical Report (PDF)</a>
+            </div>
+
+            <div class="project-block">
+                <h3>Macau Beidou Aerospace Competition - "Ling-Tong" Sphere</h3>
+                <p>Collaborated on a 20-page comprehensive technical project proposal for a drop-deployable spherical reconnaissance vehicle designed for disaster response zones. The project focuses on a Vision-Space Synchronous Anchoring layout to run telemetry over an ESP32 computing framework. My primary responsibility involved researching the utilization of Beidou's satellite short-message communication protocols to reliably send absolute coordinates and gas detector logs under complete network blackouts.</p>
+                <a href="beidou_report.pdf" class="btn" download="Yu_Cheuk_Tak_Beidou_Project_Proposal.pdf">Download Project Proposal (PDF)</a>
+            </div>
+
+            <div class="project-block">
+                <h3>Electronic Device Construction Competition (Communications Museum of Macau)</h3>
+                <p><strong>2024 Projectile Launcher:</strong> Focused on classic mechanical link mechanics. Calculated gear ratios and adjusted linkage structures to manage energy transfer and mechanical release accuracy using a standard low-voltage motor.</p>
+                <p><strong>2026 Balance & Sorting Automation:</strong> Developed an S-Curve acceleration motor profiling routine to prevent load displacement during movement across flat surfaces under time constraints. Integrated a multi-axis servo arm with coordinate tracking to secure a Judges' Commendation Award out of 90 competing teams.</p>
+                <a href="https://www.cmm.gov.mo/chis/activities/2024/ecompetition/result.html" class="btn" target="_blank">View Official Competition Results</a>
+            </div>
+
+            <div class="project-block">
+                <h3>IoT Smart Dumbbell Prototyping (Ongoing)</h3>
+                <p>A self-directed development project aiming to create a digital motion tracker for physical training equipment. The design uses an ESP32-C3 microcontroller connected via an I2C bus interface to a GY-511 telemetry module (incorporating the LSM303DLHC accelerometer and magnetometer). Current tasks involve coding a basic complementary filtering setup to reduce motion artifacts and accurately register repetitive angular changes. Full data synthesis is slated for completion in June 2026.</p>
             </div>
         </section>
 
-        <section>
-            <h2 class="section-title">Technical Toolkit</h2>
-            <div class="card">
-                <ul>
-                    <li><strong>Mechanical & Prototyping:</strong> Expert in Autodesk Fusion 360 parameterization and Design for Manufacturing (DFM). Highly proficient in Bambu Lab 3D printing rapid prototyping with structural stress analysis.</li>
-                    <li><strong>Embedded IoT Systems:</strong> Expert in ESP32-C3 (RISC-V) and Arduino frameworks. Deeply experienced in I2C/SPI/UART communication protocols, multi-sensor fusion (GY-511 LSM303DLHC Accelerometer/Magnetometer), and signal filtering algorithms to eliminate inertial noise.</li>
-                    <li><strong>Aerospace & Spatial Systems:</strong> Advanced understanding of Beidou Satellite Navigation System (BDS) architecture, including absolute temporal-spatial calibration and low-latency short-message communication protocols for emergency rescue operations in off-grid environments.</li>
-                    <li><strong>Advanced Academics:</strong> Advanced Calculus (applied in system dynamics), Advanced Chemistry (electrochemical energy storage dynamics), and expert-level technical reporting/proposal authoring.</li>
-                </ul>
-            </div>
+        <section id="fieldwork">
+            <h2>Fieldwork & Practical Experience</h2>
+            <p><strong>Urban Safety Survey & Advocacy (Seng I Building):</strong> Participated in a joint-school geography survey assessing environmental risks in high-density residential sectors of Macau's Northern District. During the field assessment of the Seng I building (勝意樓), our team documented extensive structural concrete spalling, a non-functional communal corridor lighting network, and fire escape paths obstructed by debris. We compiled these findings into an empirical summary advocating for accelerated local urban renewal and safety intervention.</p>
+            <p><strong>DAT Society & Greater Bay Area Inspection:</strong> Active member of the school's Design & Applied Technology Society. Participated in the Dongguan modern industrial tour organized by the Macau Engineering Association, tracking automated assembly frameworks to understand practical manufacturing constraints.</p>
+            <p><strong>Chado (Tea Ceremony) Practice & Critical Research:</strong> The discipline involved in Chado has served as a practical method for maintaining concentration and strict sequential awareness during hardware testing and complex code debugging. This is paired with classical historical document analysis coursework to strengthen objective literature synthesis and multi-variable critical reasoning.</p>
         </section>
 
-        <section>
-            <h2 class="section-title">Core Engineering Projects</h2>
-            <div class="card">
-                <h3>Autonomous Sumo Robot (4th Place School-wide)</h3>
-                <p>Designed a competitive sumo robot using a 7-sensor IR matrix for precise boundary and enemy detection. <strong>Technical Challenge:</strong> Faced a critical structural conflict between the L-shaped motor housing and the battery box; I resolved this through iterative manual polishing and chassis recalibration. During finals, when the front wing fractured under collision, I implemented an emergency structural support using reinforced adhesive laminates to maintain rigid competitive performance.</p>
-                <a href="請在此貼上 F4C_Group6_Sumo_report 的 Google Drive 連結" class="btn" target="_blank">View Technical Report</a>
-            </div>
-            <div class="card">
-                <h3>"Ling-Tong" Beidou Micro-Reconnaissance Sphere</h3>
-                <p>Authored a 20-page expert technical proposal for a high-rigidity reconnaissance sphere. <strong>System Architecture:</strong> Integrated an ESP32 dual-core processor for tactical low-latency video links. Developed a "Vision-Space Synchronous Anchoring" protocol. <strong>Key Contribution:</strong> Investigated Beidou short-message protocols to transmit critical telemetry (gas levels, life signs) mapped to absolute spatial-temporal coordinates, providing a solution to the "information black-box" effect in disaster zones.</p>
-                <a href="請在此貼上 靈瞳計畫書 的 Google Drive 連結" class="btn" target="_blank">View Project Proposal</a>
-            </div>
-            <div class="card">
-                <h3>Communication Museum Device Construction (Judges' Commendation)</h3>
-                <p><strong>2024 Projectile Launcher:</strong> Focused on classic mechanical kinematics. Optimized gear ratios and linkage-based energy accumulation mechanisms to achieve high-precision ballistic release using standardized low-voltage DC motors.</p>
-                <p><strong>2026 "Dynamic & Static" Sorting Bot:</strong> Implemented a proprietary S-Curve acceleration algorithm to eliminate inertial jitter on open-platform transportation. Integrated a multi-DOF servo robotic arm with coordinate compensation logic, successfully navigating non-railed platforms to secure a Judges' Commendation Award among elite teams.</p>
-                <a href="https://www.cmm.gov.mo/chis/activities/2024/ecompetition/result.html" class="btn" target="_blank">View Competition Details</a>
-            </div>
-            <div class="card">
-                <h3>IoT Smart Dumbbell Development (In-Progress)</h3>
-                <p><strong>Current Research:</strong> Developing a digital fitness analytics platform. Integrating an <strong>ESP32-C3 microcontroller</strong> via I2C bus with a <strong>GY-511 (LSM303DLHC) sensor module</strong> to map multi-axis real-time motion. <strong>Algorithm Development:</strong> Currently coding complementary filtering algorithms to isolate inertial noise from sensor data, enabling precise detection of training form and calorie estimation. Scheduled for full technical reporting in June 2026.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2 class="section-title">Fieldwork & Social Practice</h2>
-            <div class="card">
-                <p><strong>Urban Renewal & Safety Advocacy (Seng I Building):</strong> Conducted a field survey of the <strong>"Seng I" building</strong> in Macau’s Northern District. Identified critical safety hazards including extensive concrete spalling, failed communal corridor lighting, and hazardous debris obstructing fire emergency escape routes. Authored a formal policy brief urging the SAR government to accelerate urban renewal and structural retrofitting programs.</p>
-                <p><strong>Industrial Expedition:</strong> Participated in the Macau Engineering Association’s Dongguan expedition. Witnessed Industry 4.0 automated production lines, bridging desktop prototyping mindsets with large-scale industrial Design for Manufacturing (DFM) requirements.</p>
-                <p><strong>Tea Ceremony (Chado) & Critical Thinking:</strong> I practice Chado to cultivate the absolute focus and process precision required for high-level hardware debugging. Combined with formal historical research training, I have developed the ability to synthesize complex literature, perform critical multi-dimensional causality analysis, and evaluate the long-term societal impacts of technological deployment.</p>
-            </div>
-        </section>
-
-        <footer style="text-align: center; margin-top: 50px;">
-            <p>If you are an academic reviewer, please feel free to reach out directly via Gmail.</p>
+        <footer id="contact">
+            <p>Interested academic reviewers and faculty members can contact me directly for full documentation.</p>
             <a href="mailto:cheuktakyu@gmail.com" class="btn">Connect via Gmail</a>
+            <p style="margin-top: 30px; font-size: 0.8rem; color: #999999;">&copy; 2026 Yu Cheuk Tak. All Rights Reserved.</p>
         </footer>
     </div>
+
 </body>
 </html>
