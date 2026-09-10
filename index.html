@@ -5,128 +5,322 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yu Cheuk Tak - Engineering Portfolio</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #ffffff;
-            color: #222222;
-            line-height: 1.7;
-            padding: 50px 20px;
+    :root {
+        --ink: #111827;
+        --muted: #667085;
+        --line: #e5e7eb;
+        --soft: #f8fafc;
+        --accent: #1d4ed8;
+        --accent-dark: #173b9c;
+        --max: 980px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+        background: #ffffff;
+        color: var(--ink);
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+        width: min(var(--max), calc(100% - 40px));
+        margin: 0 auto;
+    }
+
+    header {
+        min-height: 72vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-bottom: 1px solid var(--line);
+        padding: 80px 0 70px;
+    }
+
+    .eyebrow {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+    }
+
+    header h1 {
+        max-width: 760px;
+        margin: 0 0 18px;
+        font-size: clamp(2.6rem, 7vw, 5.2rem);
+        line-height: 1.02;
+        letter-spacing: -0.045em;
+        color: #0b0f19;
+    }
+
+    header p {
+        max-width: 680px;
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 24px;
+        margin-top: 34px;
+        color: #475467;
+        font-size: 0.88rem;
+    }
+
+    .hero-meta span::before {
+        content: "•";
+        margin-right: 9px;
+        color: #98a2b3;
+    }
+
+    section {
+        padding: 78px 0 10px;
+    }
+
+    .section-label {
+        margin: 0 0 8px;
+        color: var(--muted);
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        margin: 0 0 30px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--line);
+        color: #101828;
+        font-size: 1.45rem;
+        letter-spacing: -0.02em;
+    }
+
+    h3 {
+        margin: 0 0 12px;
+        color: #101828;
+        font-size: 1.15rem;
+        line-height: 1.4;
+    }
+
+    p {
+        margin: 0 0 16px;
+        color: #344054;
+        text-align: left;
+    }
+
+    ul {
+        margin: 0;
+        padding-left: 21px;
+        color: #344054;
+    }
+
+    li {
+        margin-bottom: 12px;
+        padding-left: 4px;
+    }
+
+    .project-block {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+        gap: 34px;
+        align-items: start;
+        margin-bottom: 48px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .project-block:last-child {
+        margin-bottom: 0;
+    }
+
+    .project-copy {
+        padding-top: 4px;
+    }
+
+    .project-tag {
+        display: inline-block;
+        margin-bottom: 12px;
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
+
+    .project-media {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--soft);
+        box-shadow: 0 8px 30px rgba(16, 24, 40, 0.06);
+    }
+
+    .project-media img {
+        width: 100%;
+        height: 260px;
+        display: block;
+        object-fit: cover;
+        transition: transform 600ms cubic-bezier(.2,.65,.2,1);
+    }
+
+    .project-media.award img {
+        object-position: center 42%;
+    }
+
+    .project-media:hover img {
+        transform: scale(1.035);
+    }
+
+    .media-caption {
+        padding: 11px 14px;
+        border-top: 1px solid var(--line);
+        color: #667085;
+        background: #ffffff;
+        font-size: 0.78rem;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        margin-top: 8px;
+        padding: 9px 14px;
+        border: 1px solid #98a2b3;
+        border-radius: 6px;
+        background: #ffffff;
+        color: #1d2939;
+        text-decoration: none;
+        font-size: 0.86rem;
+        font-weight: 650;
+        transition: transform 180ms ease, border-color 180ms ease,
+                    background 180ms ease, color 180ms ease;
+    }
+
+    .btn::after {
+        content: "↗";
+        font-size: 0.9em;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        border-color: var(--accent);
+        background: var(--accent);
+        color: #ffffff;
+    }
+
+    #fieldwork p {
+        max-width: 860px;
+        margin-bottom: 24px;
+    }
+
+    footer {
+        margin-top: 90px;
+        padding: 35px 0 50px;
+        border-top: 1px solid var(--line);
+        text-align: center;
+    }
+
+    footer p {
+        color: var(--muted);
+        text-align: center;
+    }
+
+    /* Subtle scroll reveal: restrained on purpose. */
+    .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 650ms ease, transform 650ms ease;
+    }
+
+    .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
         }
-        .container {
-            max-width: 850px;
-            margin: 0 auto;
+
+        .reveal {
+            opacity: 1;
+            transform: none;
+            transition: none;
         }
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-            border-bottom: 2px solid #111111;
-            padding-bottom: 20px;
-        }
-        header h1 {
-            font-size: 2.2rem;
-            color: #111111;
-            margin: 0 0 10px 0;
-        }
-        header p {
-            font-size: 1.1rem;
-            color: #555555;
-            margin: 0;
-        }
-        h2 {
-            font-size: 1.5rem;
-            color: #0f172a;
-            border-bottom: 1px solid #cccccc;
-            padding-bottom: 8px;
-            margin-top: 45px;
-            margin-bottom: 20px;
-        }
-        h3 {
-            font-size: 1.2rem;
-            color: #1e3a8a;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        .project-block {
-            margin-bottom: 35px;
-            padding-bottom: 20px;
-            border-bottom: 1px dashed #e2e8f0;
-        }
-        p {
-            margin-top: 0;
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-        ul {
-            margin-top: 0;
-            margin-bottom: 15px;
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
+
+        .project-media img,
         .btn {
-            display: inline-block;
-            background-color: #ffffff;
-            color: #1e3a8a;
-            border: 1px solid #1e3a8a;
-            padding: 8px 16px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-top: 5px;
+            transition: none;
         }
-        .btn:hover {
-            background-color: #1e3a8a;
-            color: #ffffff;
+    }
+
+    @media (max-width: 760px) {
+        .container {
+            width: min(100% - 28px, var(--max));
         }
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+
+        header {
+            min-height: 62vh;
+            padding: 60px 0 50px;
         }
-        .photo-card {
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            overflow: hidden;
-            background-color: #fafafa;
+
+        section {
+            padding-top: 58px;
         }
-        .photo-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            display: block;
+
+        .project-block {
+            grid-template-columns: 1fr;
+            gap: 22px;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
         }
-        .photo-caption {
-            padding: 12px;
-            font-size: 0.85rem;
-            color: #444444;
+
+        .project-media img {
+            height: 230px;
         }
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid #cccccc;
-            color: #666666;
-            font-size: 0.9rem;
+
+        .hero-meta {
+            gap: 7px 16px;
         }
-    </style>
+    }
+</style>
 </head>
 <body>
 
     <div class="container">
-        <header>
-            <h1>Yu Cheuk Tak (茹卓德)</h1>
-            <p>Engineering Track Student | Instituto Salesiano, Macau</p>
+        <header class="reveal">
+            <p class="eyebrow">Engineering Portfolio · 2026</p>
+            <h1>Yu Cheuk Tak<br><span>(茹卓德)</span></h1>
+            <p>Engineering Track Student at Instituto Salesiano, Macau — focused on practical prototyping, embedded systems, and engineering problem-solving.</p>
+            <div class="hero-meta">
+                <span>Design &amp; Applied Technology</span>
+                <span>ESP32 &amp; Embedded Systems</span>
+                <span>Engineering Aspirant</span>
+            </div>
         </header>
 
-        <section id="biography">
-            <h2>Biography</h2>
+        <nav class="reveal" aria-label="Portfolio sections" style="padding:18px 0 0;border-bottom:0;"><a href="#biography" style="margin-right:20px;color:#667085;text-decoration:none;font-size:.82rem;">Profile</a><a href="#projects" style="margin-right:20px;color:#667085;text-decoration:none;font-size:.82rem;">Projects</a><a href="#fieldwork" style="color:#667085;text-decoration:none;font-size:.82rem;">Experience</a></nav>
+
+        <section id="biography" class="reveal">
+            <p class="section-label">01 · Profile</p><h2>Biography</h2>
             <p>I am a senior student specializing in the engineering track at Instituto Salesiano in Macau. Shaped by our school's specialized Design & Applied Technology (DAT) curriculum, I have concentrated on practical engineering prototyping and technical documentation since Senior 1. I focus on connecting theoretical science and calculus with hardware-software integration to solve actual functional challenges. My aspiration is to major in Engineering at National Taiwan Ocean University, where I hope to build upon my foundation in automation and sensor networks to address modern infrastructure and community problems.</p>
         </section>
 
-        <section id="toolkit">
-            <h2>Technical Toolkit</h2>
+        <section id="toolkit" class="reveal">
+            <p class="section-label">02 · Capability</p><h2>Technical Toolkit</h2>
             <ul>
                 <li><strong>Mechanical Prototyping:</strong> Practical application of Autodesk Fusion 360 for parametric design and 3D printing rapid prototyping (Bambu Lab), with a focus on structural stability and material optimization.</li>
                 <li><strong>Embedded & IoT Hardware:</strong> Firmware development using Arduino frameworks on microcontrollers such as the ESP32-C3. Hands-on experience debugging I2C protocols and incorporating sensor data from systems like the GY-511 module.</li>
@@ -135,41 +329,86 @@
             </ul>
         </section>
 
-        <section id="projects">
-            <h2>Core Engineering Projects</h2>
+        <section id="projects" class="reveal">
+            <p class="section-label">03 · Selected Work</p><h2>Core Engineering Projects</h2>
 
-            <div class="project-block">
-                <h3>Autonomous Sumo Robot Prototyping (F4C_Group6)</h3>
-                <p>Designed and built an autonomous sumo robot structured to clear a ring using a 7-sensor infrared (IR) array for line detection and target tracking. During development, a structural alignment issue occurred where the L-shaped motor casing conflicted physically with the battery compartment. I resolved this constraint by manually modifying the internal chassis layout. When a component failure occurred during the matches, I applied immediate structural reinforcements to maintain baseline stability, securing 4th place school-wide.</p>
-                <a href="./F4C_Group6_Sumo_report.pdf" class="btn" target="_blank">View Technical Report (PDF)</a>
+            <div class="project-block reveal">
+                <div class="project-copy">
+                    <span class="project-tag">Robotics · Autonomous Systems</span>
+                    <h3>Autonomous Sumo Robot Prototyping (F4C_Group6)</h3>
+                    <p>Designed and built an autonomous sumo robot structured to clear a ring using a 7-sensor infrared (IR) array for line detection and target tracking. During development, a structural alignment issue occurred where the L-shaped motor casing conflicted physically with the battery compartment. I resolved this constraint by manually modifying the internal chassis layout. When a component failure occurred during the matches, I applied immediate structural reinforcements to maintain baseline stability, securing 4th place school-wide.</p>
+                    <a href="./F4C_Group6_Sumo_report.pdf" class="btn" target="_blank" rel="noopener">View Technical Report (PDF)</a>
+                </div>
+                <div class="project-media">
+                    <img src="./sumo_robot.jpg" alt="Autonomous sumo robot prototype" loading="lazy">
+                    <div class="media-caption">Prototype chassis and embedded control hardware</div>
+                </div>
             </div>
 
-            <div class="project-block">
-                <h3>Macau Beidou Aerospace Competition - "Ling-Tong" Sphere</h3>
-                <p>Collaborated on a 20-page comprehensive technical project proposal for a drop-deployable spherical reconnaissance vehicle designed for disaster response zones. The project focuses on a Vision-Space Synchronous Anchoring layout to run telemetry over an ESP32 computing framework. My primary responsibility involved researching the utilization of Beidou's satellite short-message communication protocols to reliably send absolute coordinates and gas detector logs under complete network blackouts.</p>
-                <a href="./beidou_report.pdf.pdf" class="btn" target="_blank">View Project Proposal (PDF)</a>
+            <div class="project-block reveal">
+                <div class="project-copy">
+                    <span class="project-tag">Satellite Communication · Disaster Response</span>
+                    <h3>Macau Beidou Aerospace Competition - "Ling-Tong" Sphere</h3>
+                    <p>Collaborated on a 20-page comprehensive technical project proposal for a drop-deployable spherical reconnaissance vehicle designed for disaster response zones. The project focuses on a Vision-Space Synchronous Anchoring layout to run telemetry over an ESP32 computing framework. My primary responsibility involved researching the utilization of Beidou's satellite short-message communication protocols to reliably send absolute coordinates and gas detector logs under complete network blackouts.</p>
+                    <a href="./beidou_report.pdf.pdf" class="btn" target="_blank" rel="noopener">View Project Proposal (PDF)</a>
+                </div>
+                <div class="project-media">
+                    <div style="height:260px;display:flex;align-items:center;justify-content:center;padding:28px;background:#f8fafc;color:#667085;font-size:.82rem;text-align:center;">
+                        Technical proposal<br><strong style="color:#344054;margin:4px 0;">Ling-Tong Sphere</strong><br>Beidou · ESP32 · Telemetry
+                    </div>
+                    <div class="media-caption">20-page technical project proposal</div>
+                </div>
             </div>
 
-            <div class="project-block">
-                <h3>Electronic Device Construction Competition (Communications Museum of Macau)</h3>
-                <p><strong>2026 Balance & Sorting Automation:</strong> Developed an S-Curve acceleration motor profiling routine to prevent load displacement during movement across flat surfaces under time constraints. Integrated a multi-axis servo arm with coordinate tracking to secure a Judges' Commendation Award (評判推薦獎) out of 90 competing teams.</p>
-                <a href="https://www.cmm.gov.mo/chi/activities/2026/ecompetition/regulation.html" class="btn" target="_blank">View Official Competition Information</a>
+            <div class="project-block reveal">
+                <div class="project-copy">
+                    <span class="project-tag">Automation · Competition</span>
+                    <h3>Electronic Device Construction Competition (Communications Museum of Macau)</h3>
+                    <p><strong>2026 Balance &amp; Sorting Automation:</strong> Developed an S-Curve acceleration motor profiling routine to prevent load displacement during movement across flat surfaces under time constraints. Integrated a multi-axis servo arm with coordinate tracking to secure a Judges' Commendation Award (評判推薦獎) out of 90 competing teams.</p>
+                    <a href="https://www.cmm.gov.mo/chi/activities/2026/ecompetition/regulation.html" class="btn" target="_blank" rel="noopener">View Official Competition Information</a>
+                </div>
+                <div class="project-media award">
+                    <img src="./competition_award.jpg" alt="2026 Electronic Device Construction Competition award presentation" loading="lazy">
+                    <div class="media-caption">2026 competition · Judges' Commendation Award</div>
+                </div>
             </div>
         </section>
 
-        <section id="fieldwork">
+        <section id="fieldwork" class="reveal">
             <h2>Fieldwork & Practical Experience</h2>
             <p><strong>Urban Safety Survey & Advocacy (Seng I Building):</strong> Participated in a joint-school geography survey assessing environmental risks in high-density residential sectors of Macau's Northern District. During the field assessment of the Seng I building (勝意樓), our team documented extensive structural concrete spalling, a non-functional communal corridor lighting network, and fire escape paths obstructed by debris. We compiled these findings into an empirical summary advocating for accelerated local urban renewal and safety intervention.</p>
             <p><strong>DAT Society & Greater Bay Area Inspection:</strong> Active member of the school's Design & Applied Technology Society. Participated in the Dongguan modern industrial tour organized by the Macau Engineering Association, tracking automated assembly frameworks to understand practical manufacturing constraints.</p>
             <p><strong>Chado (Tea Ceremony) Practice & Critical Research:</strong> The discipline involved in Chado has served as a practical method for maintaining concentration and strict sequential awareness during hardware testing and complex code debugging. This is paired with classical historical document analysis coursework to strengthen objective literature synthesis and multi-variable critical reasoning.</p>
         </section>
 
-        <footer id="contact">
+        <footer id="contact" class="reveal">
             <p>Interested academic reviewers and faculty members can contact me directly for full documentation.</p>
             <a href="mailto:cheuktakyu@gmail.com" class="btn">Connect via Gmail</a>
             <p style="margin-top: 30px; font-size: 0.8rem; color: #999999;">&copy; 2026 Yu Cheuk Tak. All Rights Reserved.</p>
         </footer>
     </div>
+
+<script>
+    (() => {
+        const items = document.querySelectorAll('.reveal');
+
+        if (!('IntersectionObserver' in window)) {
+            items.forEach(item => item.classList.add('visible'));
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        items.forEach(item => observer.observe(item));
+    })();
+</script>
 
 </body>
 </html>
